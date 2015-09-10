@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
+var albums = require('./routes/albums');
 
 var app = express();
 
@@ -20,8 +21,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', routes);
+app.use('/', albums);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -53,6 +54,8 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
+app.listen(3001, function(err, data){
+  console.log('Watching on port 3000');
+});
 
 module.exports = app;
