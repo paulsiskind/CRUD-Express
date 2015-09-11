@@ -1,6 +1,10 @@
 extends ../layout
 
 block content
-  h1= theAlbum.name
 
+  h1= theAlbum.name
+  h2= theAlbum.artist
+  h2= theAlbum.rating
+  h3= theAlbum.explicit
+  
   a(href="/albums/" + theAlbum._id + '/edit') Edit

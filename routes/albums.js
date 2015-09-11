@@ -20,9 +20,18 @@ router.get('/albums/:id', function(req, res, next) {
     res.render('albums/show', {theAlbum: record});
   });
 });
+router.get('/albums/:id/update', function(req, res, next){
+  albumCollection.findOne({_id: req.params.id}, function (err, record) {
+  res.render('albums/edit',{theAlbum: record});
+ });
+});
 
 router.post('/albums', function(req, res, next) {
-  albumCollection.insert({ name: req.body.album_name });
+  albumCollection.insert({ name: req.body.album_name,
+  artist: req.body.album_artist,
+  genre: req.body.album_genre,
+  rating: req.body.album_rating,
+  explicit: req.body.album_explicit });
   res.redirect('/albums');
 });
 

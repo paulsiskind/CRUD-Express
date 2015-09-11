@@ -1,9 +1,10 @@
 extends ../layout
 
-block content
-  h1 Create Album
 
-  form(action="/albums", method="post")
+block content
+  h1 Edit Album
+
+    form(action="/albums", method="post")
     div Artist
       Artist  
       input(type="text" name="album_artist")
@@ -37,4 +38,3 @@ block content
 
     div
       input(type="submit")
-    
