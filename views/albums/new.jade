@@ -9,12 +9,12 @@ block content
       input(type="text" name="album_artist")
 
     div Album 
-      Album
+      #Album
       input(type="text" name="album_name")
     
     div
        label genre  
-       select (name = "album_genre")         
+       select(name = "album_genre")         
          option(value="Jazz") Jazz
          option(value="post pop")   Post Pop
          option(value="industrial") Industrial
@@ -25,7 +25,7 @@ block content
     div 
        rating
        |1
-       input(type="radio" name="album_rating" value="1" )
+       input(type="radio" name="album_rating" value="1", checked)
        input(type="radio" name="album_rating" value="2" )
        input(type="radio" name="album_rating" value="3" )
        input(type="radio" name="album_rating" value="4" ) 
@@ -36,5 +36,7 @@ block content
        |Contains Explicit Lyrics
 
     div
-      input(type="submit")
+      input(type="submit" value="Check it out")
+      button(type="reset" value="reset") 
+           a(href="/albums/") Cancel
     

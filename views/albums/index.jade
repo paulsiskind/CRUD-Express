@@ -11,9 +11,17 @@ block content
         th ID
         th Name
         th Artist
+        th Genre
+        th Rating
     tbody
       for album in allAlbums
         tr
-          td= album._id
+          td 
+            a(href='/albums/' + album._id)= album._id
           td
-            a(href='/albums/' + album._id)= album.name
+            a(href='/albums/' + album._id)= album.name  
+          td
+            a(href='/albums/' + album._id)= album.artist
+          td= album.genre
+          td= album.rating
+             

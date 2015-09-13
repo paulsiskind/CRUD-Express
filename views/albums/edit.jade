@@ -4,37 +4,50 @@ extends ../layout
 block content
   h1 Edit Album
 
-    form(action="/albums", method="post")
-    div Artist
+  form(action="/albums/" + theAlbum._id + '/update', method="post")
+     div Artist
       Artist  
-      input(type="text" name="album_artist")
+      input(type="text" name="album_artist" value=theAlbum.artist)
 
-    div Album 
+     div 
+      label Album 
       Album
-      input(type="text" name="album_name")
+      input(type="text" name="album_name" value=theAlbum.name)
     
-    div
-       label genre  
-       select (name = "album_genre")         
-         option(value="Jazz") Jazz
-         option(value="post pop")   Post Pop
-         option(value="industrial") Industrial
-         option(value="Mariachi")  Mariachi
-         option(value="Metal")  Metal
-         option(value="Bowie")  Bowie
+     div
+       label Genre
+       Genre  
+       select(name = "album_genre" value=album_genre)         
+         option(value="Jazz" selected=(theAlbum.genre=="Jazz" ? "selected" : undefined)) Jazz
+         option(value="post pop" selected=(theAlbum.genre=="post pop" ? "selected" : undefined))   Post Pop
+         option(value="industrial" selected=(theAlbum.genre=="industrial" ? "selected" : undefined)) Industrial
+         option(value="Mariachi" selected=(theAlbum.genre=="Mariachi" ? "selected" : undefined))  Mariachi
+         option(value="Metal" selected=(theAlbum.genre=="Metal" ? "selected" : undefined))  Metal
+         option(value="Bowie" selected=(theAlbum.genre=="Bowie" ? "selected" : undefined))  Bowie
          
-    div 
+     div 
        rating
        |1
-       input(type="radio" name="album_rating" value="1" )
-       input(type="radio" name="album_rating" value="2" )
-       input(type="radio" name="album_rating" value="3" )
-       input(type="radio" name="album_rating" value="4" ) 
-       input(type="radio" name="album_rating" value="5" ) 
+       input(type="radio" name="album_rating" value="1" checked=(theAlbum.rating==1 ? "checked" : undefined))
+       input(type="radio" name="album_rating" value="2" checked=(theAlbum.rating==2 ? "checked" : undefined))
+       input(type="radio" name="album_rating" value="3" checked=(theAlbum.rating==3 ? "checked" : undefined))
+       input(type="radio" name="album_rating" value="4" checked=(theAlbum.rating==4 ? "checked" : undefined)) 
+       input(type="radio" name="album_rating" value="5" checked=(theAlbum.rating==5 ? "checked" : undefined)) 
        |5
-    div
-       input(type="checkbox" name="album_explicit" value="Explicit Lyrics")
+     div
+       input(type="checkbox" name="album_explicit" value="Explicit Lyrics" checked=(theAlbum.explicit=="Explicit Lyrics" ? "checked" : undefined))
        |Contains Explicit Lyrics
 
-    div
-      input(type="submit")
+     div
+      
+
+
+      input(type="submit" value="Update Album")
+      button(type="reset" value="reset") 
+           a(href="/albums/:id") Cancel
+
+
+
+
+
+      

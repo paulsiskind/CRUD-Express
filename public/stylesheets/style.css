@@ -1,8 +1,22 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(http://celebmix.co.uk/wp-content/uploads/2015/03/rolling.stones-sticky-fingers-2b35.jpg);
+  display: block;
+  color: pink
 }
 
 a {
   color: #00B7FF;
+}
+artist{
+
+}
+album{
+  display: block;
+  margin: 10px 10px;
+  color: pink
+}
+Genre{
+  margin-bottom: 10px;
 }
