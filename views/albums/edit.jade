@@ -5,18 +5,18 @@ block content
   h1 Edit Album
 
   form(action="/albums/" + theAlbum._id + '/update', method="post")
-     div Artist
-      Artist  
+     div.artist
+      label Artist  
       input(type="text" name="album_artist" value=theAlbum.artist)
 
-     div 
+     div.album
       label Album 
       Album
       input(type="text" name="album_name" value=theAlbum.name)
     
-     div
+     div.genre
        label Genre
-       Genre  
+        
        select(name = "album_genre" value=album_genre)         
          option(value="Jazz" selected=(theAlbum.genre=="Jazz" ? "selected" : undefined)) Jazz
          option(value="post pop" selected=(theAlbum.genre=="post pop" ? "selected" : undefined))   Post Pop
@@ -25,8 +25,8 @@ block content
          option(value="Metal" selected=(theAlbum.genre=="Metal" ? "selected" : undefined))  Metal
          option(value="Bowie" selected=(theAlbum.genre=="Bowie" ? "selected" : undefined))  Bowie
          
-     div 
-       rating
+     div.rating 
+       
        |1
        input(type="radio" name="album_rating" value="1" checked=(theAlbum.rating==1 ? "checked" : undefined))
        input(type="radio" name="album_rating" value="2" checked=(theAlbum.rating==2 ? "checked" : undefined))
@@ -34,17 +34,17 @@ block content
        input(type="radio" name="album_rating" value="4" checked=(theAlbum.rating==4 ? "checked" : undefined)) 
        input(type="radio" name="album_rating" value="5" checked=(theAlbum.rating==5 ? "checked" : undefined)) 
        |5
-     div
+     div.explicit
        input(type="checkbox" name="album_explicit" value="Explicit Lyrics" checked=(theAlbum.explicit=="Explicit Lyrics" ? "checked" : undefined))
        |Contains Explicit Lyrics
 
-     div
+     div.submit
       
 
 
-      input(type="submit" value="Update Album")
+      button(type="submit" value="Update Album") Update
       button(type="reset" value="reset") 
-           a(href="/albums/:id") Cancel
+           a(href="/albums/") Cancel
 
 
 

@@ -8,10 +8,9 @@ block content
   h2= theAlbum.rating
   h3= theAlbum.explicit
   
-  a(href="/albums/" + theAlbum._id + '/edit') Edit
-
-  //- form(id="delete", action="/albums/"+id+"/delete", method="post")
-  //- input(type="submit", value="Delete")
+  a.button(href="/albums/" + theAlbum._id + '/edit') Edit
+    
+  
 
   form(action="/albums/" + theAlbum._id + '/delete', method="post")
     input.button(type="submit", value="Delete")

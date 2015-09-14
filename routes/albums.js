@@ -3,9 +3,7 @@ var router = express.Router();
 var db = require('monk')('localhost/album-demo');
 var albumCollection = db.get('albums');
 
-// router.get('/albums', function(req, res, next) {
-//   res.render('albums/index');
-// });
+
 router.get('/albums', function(req, res, next) {
   albumCollection.find({}, function (err, records) {
     res.render('albums/index', {allAlbums: records});
