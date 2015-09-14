@@ -2,15 +2,16 @@ extends ../layout
 
 block content
   h1 Albums
-
-  a(href="/albums/new") New Album
+ 
+  button(type="submit" value="New Album")
+      a(href="/albums/new") New Album
 
    table
     thead
       tr
         th ID
-        th Name
         th Artist
+        th Album
         th Genre
         th Rating
     tbody
@@ -19,9 +20,9 @@ block content
           td 
             a(href='/albums/' + album._id)= album._id
           td
-            a(href='/albums/' + album._id)= album.name  
+            a(href='/albums/' + album._id)= album.artist  
           td
-            a(href='/albums/' + album._id)= album.artist
+            a(href='/albums/' + album._id)= album.name
           td= album.genre
           td= album.rating
              

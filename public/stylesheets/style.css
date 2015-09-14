@@ -1,21 +1,19 @@
 body {
   padding: 50px;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url(http://celebmix.co.uk/wp-content/uploads/2015/03/rolling.stones-sticky-fingers-2b35.jpg);
   display: block;
-  color: pink
+  color: #F32D2C
 }
 h1{
   font-size: 60px;
 }
 a {
-  color: #00B7FF;
+  color: #0154BF;
 }
 .artist{
-   color: goldenrod;
    margin: 0px 10px 4px 10px;
    display: li;
-   font-size: 20px;
 
 }
 .album{
@@ -24,7 +22,6 @@ a {
 
 .genre{
   margin-bottom: 10px;
-  font-size: 20px;
 }
 .rating{
   margin-bottom: 10px;
@@ -40,9 +37,14 @@ a {
 }
 
 table, td, th {
-    border: 1px solid grey;
+    border: 3px solid #5092CC;
     text-align: center;
-
+    width: 100%;
+    color: red;
+    background: #F17D17
+}
+th{
+  border-bottom: 3px solid black;
 }
 /*button{
   padding: 10px;
