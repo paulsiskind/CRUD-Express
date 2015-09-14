@@ -44,7 +44,11 @@ table, td, th {
     background: #F17D17
 }
 th{
-  border-bottom: 3px solid black;
+  border-bottom: 10px solid black;
+}
+td:hover, td:focus{
+  -webkit-animation: pulsate 1.2s linear infinite;
+  animation: pulsate 1.2s linear infinite;
 }
 /*button{
   padding: 10px;
